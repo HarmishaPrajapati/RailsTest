@@ -17,14 +17,17 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-      
+    cleaner = Cleaner.where(first_name: params[:first_name])
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
-      else
-        format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        if (@booking.cleaner_name == cleaner)
+          UserMailer.welcome_email(@cleaner).deliver_now
+          format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+          format.json { render :show, status: :created, location: @booking }
+        else
+          format.html { render :new }
+          format.json { render json: @booking.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

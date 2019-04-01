@@ -1,0 +1,15 @@
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/bindex-0.6.0/ext/skiptrace
+/home/harmisha/.rvm/rubies/ruby-2.5.1/bin/ruby -I /home/harmisha/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190331-26534-du0r7w.rb extconf.rb
+creating Makefile
+
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/bindex-0.6.0/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/bindex-0.6.0/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/cruby.so
+
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/bindex-0.6.0/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -m 0755 cruby.so ./.gem.20190331-26534-1b5608r/skiptrace

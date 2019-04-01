@@ -1,0 +1,15 @@
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+/home/harmisha/.rvm/rubies/ruby-2.5.1/bin/ruby -I /home/harmisha/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190331-26534-6kdffe.rb extconf.rb
+creating Makefile
+
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/harmisha/Desktop/Rails_Test/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20190331-26534-1h8go7r

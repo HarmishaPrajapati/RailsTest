@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_29_081707) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 2019_04_01_112533) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,6 +30,8 @@ ActiveRecord::Schema.define(version: 2019_03_29_081707) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cleaner_id"
+    t.index ["cleaner_id"], name: "index_bookings_on_cleaner_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -48,14 +47,16 @@ ActiveRecord::Schema.define(version: 2019_03_29_081707) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
+    t.integer "city_id"
     t.string "city"
-    t.bigint "city_id"
+    t.integer "booking_id"
+    t.index ["booking_id"], name: "index_cleaners_on_booking_id"
     t.index ["city_id"], name: "index_cleaners_on_city_id"
   end
 
   create_table "cleaners_customers", id: false, force: :cascade do |t|
-    t.bigint "customer_id", null: false
-    t.bigint "cleaner_id", null: false
+    t.integer "customer_id", null: false
+    t.integer "cleaner_id", null: false
     t.index ["customer_id", "cleaner_id"], name: "index_cleaners_customers_on_customer_id_and_cleaner_id"
   end
 
@@ -63,15 +64,11 @@ ActiveRecord::Schema.define(version: 2019_03_29_081707) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone_number"
+    t.string "city_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "city_name"
     t.date "date"
     t.time "time"
-    t.bigint "city_id"
-    t.index ["city_id"], name: "index_customers_on_city_id"
   end
 
-  add_foreign_key "cleaners", "cities"
-  add_foreign_key "customers", "cities"
 end

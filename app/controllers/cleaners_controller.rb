@@ -20,9 +20,7 @@ class CleanersController < ApplicationController
     @cleaner = Cleaner.new(cleaner_params)
     respond_to do |format|
       if @cleaner.save
-        UserMailer.welcome_email(@cleaner).deliver_now
         format.html { redirect_to @cleaner, notice: 'Greetings ..!! Email is deliverd to you when new Booking is created ' }
-        format.json { render :show, status: :created, location: @cleaner }
       else
         format.html { render :new }
         format.json { render json: @cleaner.errors, status: :unprocessable_entity }

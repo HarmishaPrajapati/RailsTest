@@ -1,0 +1,16 @@
+<div class="center jumbotron">
+<p class="navbar-text pull-right">
+<% if admin_signed_in? %>
+  Logged in as :<br> <strong><%= current_admin.email %></strong><br>
+  <div class="container">
+  <%= link_to 'View Customers',   customers_path  , :class => 'navbar-link' %> <br>
+  <%= link_to 'View Cleaners', cleaners_path, :class => 'navbar-link' %> <br>
+  <%= link_to 'View Bookings', bookings_path, :class => 'navbar-link' %><br>
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %><br>
+<% else %>
+  <%= link_to "Sign up", new_admin_registration_path, :class => 'navbar-link'  %> <br>
+  <%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %><br>
+<% end %>
+</div>
+</p>
+</div>

@@ -18,11 +18,11 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     @cleaner = Cleaner.new
-    if @customer.save      
+    if @customer.save  
       redirect_to @cleaner
-     else
+    else
       render :new
-    end  
+    end
   end
 
   def update
